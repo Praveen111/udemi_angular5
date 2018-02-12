@@ -1,0 +1,43 @@
+<nav class='navbar navbar-default'>
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a href="#" class='navbar-brand'>Recipe Book</a>
+    </div>
+
+    <div class="colapse colapse-navbar">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active">
+          <a routerLink='recipes'>Recipes</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink='shopping-list'>Shopping List</a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+<!-- <ng-container *ngIf="authService.isAuthenticated() == false"> -->
+    <li routerLinkActive="active" *ngIf="authService.isAuthenticated() === false">
+        <a routerLink='signup'>Register</a>
+      </li>
+      <li routerLinkActive="active" style="cursor: pointer;" *ngIf="authService.isAuthenticated() === false">
+        <a routerLink='login'>Login</a>
+      </li>
+
+<!-- </ng-container> -->
+      <li style="cursor: pointer;"> <a (click)="Onlogout()" *ngIf="authService.isAuthenticated() == true">Logout</a></li>
+
+      <li class="dropdown" appDropdown *ngIf="authService.isAuthenticated() === true">
+			  <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage <span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				<li><a (click)="onSave()" style="cursor: pointer;">Save</a></li>
+				<li><a (click)="onGet()" style="cursor: pointer;">Fetch</a></li>
+
+        </ul>
+
+			</li>
+		  </ul>
+
+    </div>
+  </div>
+</nav>

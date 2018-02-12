@@ -1,0 +1,34 @@
+
+<header-comp></header-comp>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- <app-recipe *ngIf="defaultFeature === 'recipe'"></app-recipe>
+        <app-shopping-list *ngIf="defaultFeature === 'slist'"></app-shopping-list> -->
+         <router-outlet></router-outlet>
+      </div>
+    </div>
+
+    <div class='row'>
+<table class="table table-bordered" style='width: auto;'>
+<tr><th>Notification</th></tr>
+<tr> <marquee direction="up" scrolldelay='300' bgcolor='pink'>
+    <p>This text will scroll from bottom to top</p>
+<hr>
+    <p>Hello Praveen</p>
+  </marquee></tr>
+</table>
+      <!-- <marquee direction="up">
+        <p>This text will scroll from bottom to top</p>
+        <p>Hello Praveen</p>
+      </marquee> (mouseenter)='method1($event)' (mouseleave)='method2($event)'-->
+      <button type="button" class="btn btn-default" aria-label="Left Align" (click)='method3($event)'>
+          <span class="glyphicon glyphicon-chevron-down" aria-hidden="true" #val></span>
+        </button>
+    </div>
+
+    <!-- <label *ngIf="val; else elseBlock">{{val}}</label>
+<ng-template #elseBlock>
+    <label style="color:#000000;font-size:12px;padding-top: 5px">{{val}}</label>
+</ng-template> -->
+  </div>
