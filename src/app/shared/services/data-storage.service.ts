@@ -18,14 +18,14 @@ constructor(private http: Http,
 
 storeRecipes(){
   const token = this.authService.getToken();
- return this.http.put('https://ng-recipe-book-d5584.firebaseio.com/recipes.json?auth=' + token, this.recipeService.getRecipes());
+ return this.http.put('https://abcd.com/recipes.json?auth=' + token, this.recipeService.getRecipes());
 }
 
 getRecipes(){
 
   const token = this.authService.getToken();
 
-return this.http.get('https://ng-recipe-book-d5584.firebaseio.com/recipes.json?auth=' + token)
+return this.http.get('https://abcd.com/recipes.json?auth=' + token)
 // .map((response : Response) => {
 //   //const recipes: Recipe[] = response.json();
 //   console.log('inside subscribe', response);
